@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Links</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension tsutsu3.markdown-named-codeblocks */
+.named-fence-block {
+  position: relative;
+  padding-top: 2em !important;
+}
+
+.named-fence-filename {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 4px;
+  font-weight: bold;
+  color: #000000;
+  background: #c0c0c0;
+  opacity: 0.6;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <ul>
+<li><a href="#links">Links</a></li>
+<li><a href="#clip-path"><code>clip-path</code></a></li>
+<li><a href="#%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88%E3%82%92%E9%85%8D%E7%BD%AE%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%82%82%E3%81%AE">セグメントを配置しているもの</a></li>
+<li><a href="#const-nums-%E3%81%8C%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE"><code>const nums =...</code>が意味するもの</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://bennettfeely.com/clippy/">CSS clip-path maker</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/join">join()</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/split">split()</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map()</a></li>
+</ul>
+<h2 id="clip-path"><code>clip-path</code></h2>
+<p><code>clip-path</code> プロパティはCSSの非常に強力なツールの一つで、HTML要素の特定の部分のみを表示し、残りを「クリッピング」（切り取る）するために使用されます。このプロパティは、要素の形状を定義するのに非常に効果的で、多角形、円、楕円、またはSVGのパスを使用してカスタム形状を作成することができます。</p>
+<p><code>clip-path</code> プロパティの一般的な使い方は以下の通りです：</p>
+<ol>
+<li>
+<p><strong>多角形</strong>:</p>
+<ul>
+<li><code>clip-path: polygon(x1% y1%, x2% y2%, ..., xn% yn%);</code></li>
+<li>この構文では、複数の点（x%, y%）を使って多角形の頂点を指定します。例えば、<code>clip-path: polygon(0% 0%, 100% 0%, 50% 100%);</code> は三角形を作ります。</li>
+</ul>
+</li>
+<li>
+<p><strong>円</strong>:</p>
+<ul>
+<li><code>clip-path: circle(radius at x y);</code></li>
+<li>半径と中心の座標を指定して円形のクリッピングパスを作成します。例：<code>clip-path: circle(50% at 50% 50%);</code></li>
+</ul>
+</li>
+<li>
+<p><strong>楕円</strong>:</p>
+<ul>
+<li><code>clip-path: ellipse(rx ry at x y);</code></li>
+<li>楕円の水平半径（rx）、垂直半径（ry）、中心点（x y）を指定します。例：<code>clip-path: ellipse(50% 25% at 50% 50%);</code></li>
+</ul>
+</li>
+<li>
+<p><strong>SVGパス</strong>:</p>
+<ul>
+<li><code>clip-path: path('d属性値');</code></li>
+<li>SVGのパスデータを直接使用してより複雑な形状を定義できます。</li>
+</ul>
+</li>
+</ol>
+<p>あなたのCSSコードの例では、<code>clip-path: polygon(25% 0%, 75% 0%, 83% 50%, 75% 100%, 25% 100%, 25% 100%, 18% 50%);</code> という記述があります。これは、台形の形を作成しており、各頂点がパーセンテージで指定されています。この台形は7セグメントディスプレイの各セグメントの形を表しており、<code>clip-path</code> により要素の形状を定義しています。</p>
+<p><code>clip-path</code> を使用することで、デザインに独自の形状や視覚的な効果を追加できるため、ウェブページのUI/UXデザインにおいて非常に有用です。ただし、すべてのブラウザがすべての <code>clip-path</code> の機能をサポートしているわけではないので、互換性に注意が必要です。</p>
+<hr>
+<p><code>clip-path: polygon(25% 0%, 75% 0%, 83% 50%, 75% 100%, 25% 100%, 25% 100%, 18% 50%);</code>
+それぞれの数値は何を意味していますか？</p>
+<hr>
+<p>この <code>clip-path</code> プロパティの <code>polygon()</code> 関数で指定されている数値は、クリッピングされる図形の頂点を定義しています。具体的には、<code>polygon(25% 0%, 75% 0%, 83% 50%, 75% 100%, 25% 100%, 25% 100%, 18% 50%)</code> という記述は7つの頂点を持つ多角形（この場合は台形）を作成しています。各頂点はパーセンテージで指定されており、要素の幅と高さに対する相対的な位置を表します。</p>
+<p>それぞれの頂点は次のように解釈されます：</p>
+<ol>
+<li><code>25% 0%</code>: 要素の幅の25%、高さの0%の位置にある頂点（上部の左端）。</li>
+<li><code>75% 0%</code>: 要素の幅の75%、高さの0%の位置にある頂点（上部の右端）。</li>
+<li><code>83% 50%</code>: 要素の幅の83%、高さの50%の位置にある頂点（右側の中央よりやや下）。</li>
+<li><code>75% 100%</code>: 要素の幅の75%、高さの100%の位置にある頂点（下部の右端）。</li>
+<li><code>25% 100%</code>: 要素の幅の25%、高さの100%の位置にある頂点（下部の左端）。</li>
+<li><code>25% 100%</code>: 同上、この点は重複しています。</li>
+<li><code>18% 50%</code>: 要素の幅の18%、高さの50%の位置にある頂点（左側の中央よりやや下）。</li>
+</ol>
+<p>この多角形は基本的に台形の形をしており、7セグメントディスプレイの各セグメントの形状を模しています。ここでのパーセンテージ値は、要素の全体的なサイズに対して相対的な位置を指定しており、それにより多角形の形状が決定されます。</p>
+<h2 id="セグメントを配置しているもの">セグメントを配置しているもの</h2>
+<p>7セグメントディスプレイの各セグメントの配置は、提供されたCSSコードの中で、<code>.clock-item</code> 内の <code>.seg</code> クラスとその修飾子（<code>.one</code>、<code>.two</code>、<code>.three</code>、<code>.four</code>、<code>.five</code>、<code>.six</code>、<code>.seven</code>）を使って行われています。これらのクラスは、各セグメントの位置と回転を定義しており、セグメントを正しい位置に配置しています。それぞれのクラスの役割を詳しく見ていきましょう：</p>
+<ol>
+<li>
+<p><strong><code>.clock-item .seg</code></strong>:</p>
+<ul>
+<li>これはすべてのセグメントに共通の基本スタイルを設定します。<code>position: absolute</code> で要素を絶対位置に配置し、<code>width</code> と <code>height</code> でサイズを指定しています。<code>clip-path</code> でセグメントの形状（台形）を定義し、<code>transform</code> で位置を調整しています。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>.clock-item .one</code> ～ <code>.clock-item .seven</code></strong>:</p>
+<ul>
+<li>これらのクラスは、7セグメントディスプレイの特定のセグメント（1から7）の位置を指定します。例えば、<code>.one</code> は最上部のセグメント、<code>.two</code> は右上のセグメントを表します。</li>
+<li><code>top</code> と <code>left</code> プロパティでセグメントの位置を指定し、必要に応じて <code>transform</code> プロパティで回転や位置の微調整を行っています。<code>z-index</code> プロパティを使ってセグメントの重なり順序を制御することもできます。</li>
+</ul>
+</li>
+<li>
+<p><strong>セグメントの配置例</strong>:</p>
+<ul>
+<li><code>.one</code>: 最上部のセグメントを中央に配置。</li>
+<li><code>.two</code>: 右上のセグメントを縦方向に回転して配置。</li>
+<li><code>.three</code>: 右下のセグメントも縦方向に回転して配置。</li>
+<li><code>.four</code>: 最下部のセグメントを中央に配置。</li>
+<li><code>.five</code>: 左下のセグメントを縦方向に回転して配置。</li>
+<li><code>.six</code>: 左上のセグメントも縦方向に回転して配置。</li>
+<li><code>.seven</code>: 中央のセグメントを中央に配置。</li>
+</ul>
+</li>
+</ol>
+<p>HTMLとJavaScriptのコードがこれらのCSSクラスにどのように対応しているかによって、セグメントがどのように表示されるかが決まります。JavaScriptは通常、現在の時刻に応じてこれらのセグメントをアクティブ（点灯）状態にしたり非アクティブ（消灯）状態にしたりするために使われます。</p>
+<h2 id="const-nums-が意味するもの"><code>const nums =...</code>が意味するもの</h2>
+<p><code>const nums = ['1111110' , '0110000', '1101101', '1111001', '0110011', '1011011', '0011111', '1110010', '1111111', '1110011'];</code></p>
+<p>これは2進数ですか？</p>
+<hr>
+<p>はい、提供された <code>nums</code> 配列内の文字列は、2進数の概念に基づいていますが、通常の2進数とは少し異なります。この配列は、7セグメントディスプレイ上で各数字（0から9）を表示するために必要なセグメントの点灯状態を表しています。</p>
+<p>7セグメントディスプレイは、7つの個別のセグメント（通常はLEDまたはLCD）で構成されており、これらのセグメントを組み合わせて数字を表示します。各文字列内の各数字（<code>1</code> または <code>0</code>）は、対応するセグメントが点灯（<code>1</code>）するか消灯（<code>0</code>）するかを示しています。</p>
+<p>例えば、<code>'1111110'</code> は数字の「0」を表しており、最初の6つのセグメントは点灯（<code>1</code>）し、最後のセグメントは消灯（<code>0</code>）します。このパターンは、7セグメントディスプレイ上で「0」の形を作り出します。</p>
+<p>各文字列の位置は、通常以下のようにセグメントに対応しています：</p>
+<ol>
+<li>最上部の水平セグメント</li>
+<li>右上の垂直セグメント</li>
+<li>右下の垂直セグメント</li>
+<li>最下部の水平セグメント</li>
+<li>左下の垂直セグメント</li>
+<li>左上の垂直セグメント</li>
+<li>中央の水平セグメント</li>
+</ol>
+<p>この配列を使用することで、JavaScriptコードは各数字を正確に7セグメントディスプレイ上に表示することができます。</p>
+<hr>
+<p>インデックスの0から9それぞれで、オンオフにするセグメントを0と1を使って表現しているということですか？</p>
+<hr>
+<p>はい、正確にその通りです。<code>nums</code> 配列の各要素は、7セグメントディスプレイ上で数字を表示するために必要なセグメントの点灯（オン）と消灯（オフ）を表現しています。各要素は7桁の文字列で、それぞれの桁は特定のセグメントの状態を表しており、「1」はそのセグメントが点灯（オン）、そして「0」は消灯（オフ）を意味します。</p>
+<p>例えば、インデックス0の要素は <code>'1111110'</code> です。これは数字の「0」を表現するためのセグメントの状態を示しています。この場合、最初の6つのセグメント（上、右上、右下、下、左下、左上）が点灯（<code>1</code>）し、最後のセグメント（中央）は消灯（<code>0</code>）しています。</p>
+<p>7セグメントディスプレイ上で数字を表示するためのセグメント配置は一般的に以下のようになります：</p>
+<pre><code> 0
+5   1
+ 6
+4   2
+ 3
+</code></pre>
+<p>それぞれの数字（0から9）に対して、<code>nums</code> 配列の対応する要素は7セグメントのどれを点灯させるべきかを定義しています。この配列は、JavaScriptコード内で使われ、現在の時刻に基づいてディスプレイ上に正しい数字を表示します。</p>
+
+            
+            
+        </body>
+        </html>

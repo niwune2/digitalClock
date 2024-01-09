@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>sevenSeg.js - jQueryプラグインまとめのカルマ</title>
+    <style>
+        .exampleContainer {
+            display: inline-block;
+            background-color: Black;
+            border-radius: 5px;
+            margin-left: 18px;
+        }
+
+        .exampleContainer div {
+            padding: 0.5em 0 1.4em 0;
+            height: 160px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>sevenSeg.js のデモでーす。</h1>
+
+    <div class="exampleContainer">
+        <div data-bind="sevenSegArray: { digits: 4, value: mainExampleValue }"></div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="sevenSeg.js"></script>
+    <script>
+        $(function () {
+            var viewModel = {
+                mainExampleValue: ko.observable(24.00)
+            };
+            ko.applyBindings(viewModel);
+
+            setInterval(function () {
+                var value = +viewModel.mainExampleValue() - 0.01;
+                viewModel.mainExampleValue(value.toFixed(2));
+            }, 100);
+        });
+    </script>
+
+</body>
+
+</html>
